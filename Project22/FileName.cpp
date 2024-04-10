@@ -2,7 +2,7 @@
 using namespace std;
 bool isSortedIncreasing(int values[], int size)
 {
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < 5; i++)
 	{
 		if (values[i] < values[i + 1])
 		{
@@ -18,26 +18,64 @@ bool isSortedIncreasing(int values[], int size)
 }
 bool isSortedDecreasing(int values[], int size)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		if (values[i] < values[i + 1])
-		{
-			cout << "The data are not decreasing" << endl;
-			return values[i];
-		}
-		else
+		if (values[i] > values[i + 1] && values[i + 1] > values[i + 2])
 		{
 			cout << "The data are decreasing" << endl;
 			return values[i];
 		}
+		else
+		{
+			cout << "The data are not decreasing" << endl;
+			return values[i];
+		}
 	}
 }
-bool hasAdjacentDuplicates(int values[], int size);
+bool hasAdjacentDuplicates(int values[], int size)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		if (values[i] == values[i+1])
+		{
+			cout << "The data has adjacent duplicates" << endl;
+			return values[i];
+		}
+		else
+			if (values[i+1] == values[i + 2])
+			{
+				cout << "The data has adjacent duplicates" << endl;
+				return values[i];
+			}
+		else
+			if (values[i+2] == values[i + 3])
+			{
+				cout << "The data has adjacent duplicates" << endl;
+				return values[i];
+			}
+		else
+			if (values[i+3] == values[i + 4])
+			{
+				cout << "The data has adjacent duplicates" << endl;
+				return values[i];
+			}
+		else
+			if (values[i+4] == values[i + 5])
+			{
+				cout << "The data has adjacent duplicates" << endl;
+				return values[i];
+			}
+		{
+			cout << "The data has no adjacent duplicates" << endl;
+			return values[i];
+		}
+	}
+}
 bool hasDuplicates(int values[], int size);
 
 int main()
 {
-	const int arraynumber = 5;
+	const int arraynumber = 6;
 	int array[arraynumber];
 	int input;
 	cout << "Enter integer #1: ";
@@ -50,6 +88,9 @@ int main()
 	cin >> array[3];
 	cout << "Enter integer #5: ";
 	cin >> array[4];
+	cout << "Enter integer #6: ";
+	cin >> array[5];
 	isSortedIncreasing(array, arraynumber);
 	isSortedDecreasing(array, arraynumber);
+	hasAdjacentDuplicates(array, arraynumber);
 }
