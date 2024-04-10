@@ -16,7 +16,22 @@ bool isSortedIncreasing(int values[], int size)
 		}
 	}
 }
-bool isSortedDecreasing(int values[], int size);
+bool isSortedDecreasing(int values[], int size)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (values[i] < values[i + 1])
+		{
+			cout << "The data are not decreasing" << endl;
+			return values[i];
+		}
+		else
+		{
+			cout << "The data are decreasing" << endl;
+			return values[i];
+		}
+	}
+}
 bool hasAdjacentDuplicates(int values[], int size);
 bool hasDuplicates(int values[], int size);
 
@@ -36,4 +51,5 @@ int main()
 	cout << "Enter integer #5: ";
 	cin >> array[4];
 	isSortedIncreasing(array, arraynumber);
+	isSortedDecreasing(array, arraynumber);
 }
