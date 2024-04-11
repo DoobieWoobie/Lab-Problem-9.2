@@ -4,7 +4,7 @@ bool isSortedIncreasing(int values[], int size);
 bool isSortedDecreasing(int values[], int size);
 bool hasAdjacentDuplicates(int values[], int size);
 bool hasDuplicates(int values[], int size);
-
+bool duplicates = false;
 
 int main()
 {
@@ -18,6 +18,15 @@ int main()
 	isSortedIncreasing(array, arraynumber);
 	isSortedDecreasing(array, arraynumber);
 	hasAdjacentDuplicates(array, arraynumber);
+	hasDuplicates(array, arraynumber);
+	if (duplicates == true)
+	{
+		cout << "There are duplicates" << endl;
+	}
+	else
+	{
+		cout << "There are no duplicates" << endl;
+	}
 }
 bool isSortedIncreasing(int values[], int size)
 {
@@ -88,4 +97,21 @@ bool hasAdjacentDuplicates(int values[], int size)
 			return values[i];
 		}
 	}
+}
+bool hasDuplicates(int values[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 1; j < size; j++)
+		{
+			if (values[j] == values[i])
+			{
+				duplicates == true;
+			}
+			else
+			{
+				duplicates == false;
+			}
+		}
+	}return duplicates;
 }
